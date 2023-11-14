@@ -1,0 +1,2 @@
+# add in last source ..bash_aliases and source .bash_functions
+nano ~/.bashrc 
