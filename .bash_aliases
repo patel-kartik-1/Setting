@@ -12,3 +12,9 @@ alias reloadcli="source ~/.bashrc"
 
 alias setown="sudo chown www-data:$USER -R"
 alias setperm="sudo chmod 777 -R"
+
+
+#update system 
+
+alias upall="cd /home/kartik/Desktop && sudo ./update.sh"
+
