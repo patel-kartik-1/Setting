@@ -5,8 +5,8 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
-SAFFRON='\033[0;33m'  # Saffron color
-NC='\033[0m' # No Color
+SAFFRON='\033[0;33m' # Saffron color
+NC='\033[0m'         # No Color
 
 # Function to display a message in a specific format
 function display_message() {
@@ -18,7 +18,7 @@ function display_message() {
 # Function to display a fun message
 function display_fun_message() {
     printf "${GREEN}"
-    cat << "EOF"
+    cat <<"EOF"
   _  __                 _     _   _        _____            _            _ 
  | |/ /                | |   (_) | |      |  __ \          | |          | |
  | ' /    __ _   _ __  | |_   _  | | __   | |__) |   __ _  | |_    ___  | |
@@ -33,7 +33,7 @@ EOF
 # Function to display a fun message
 function display_jay_swaminarayan_message() {
     printf "${SAFFRON}"
-    cat << "EOF"
+    cat <<"EOF"
        _                      _____                                  _                                                        
       | |                    / ____|                                (_)                                                       
       | |   __ _   _   _    | (___   __      __   __ _   _ __ ___    _   _ __     __ _   _ __    __ _   _   _    __ _   _ __  
@@ -94,7 +94,7 @@ function perform_system_updates() {
 # Function to clear temporary files and caches
 function clear_temporary_files() {
     printf "${BLUE}Clearing temporary files and caches...${NC}\n"
-    
+
     # Clearing temporary files
     sudo rm -rf /tmp/*
 
@@ -113,7 +113,6 @@ function clear_temporary_files() {
 
 }
 
-
 # Main script execution starts here
 
 # Update repositories and perform upgrades
@@ -129,7 +128,8 @@ install_security_updates
 install_essential_packages
 
 # Clear temporary files and caches
-clear_temporary_files
+# clear_temporary_files
+printf "${RED}Clearing temporary files and caches are commented ${NC}\n"
 
 # Check the current time and display a greeting accordingly
 now=$(date +"%H")
