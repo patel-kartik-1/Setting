@@ -91,6 +91,29 @@ function perform_system_updates() {
     sudo apt --fix-broken install -y
 }
 
+# Function to clear temporary files and caches
+function clear_temporary_files() {
+    printf "${BLUE}Clearing temporary files and caches...${NC}\n"
+    
+    # Clearing temporary files
+    sudo rm -rf /tmp/*
+
+    # Clearing cache and temporary folders
+    sudo apt clean
+    sudo apt autoclean
+
+    # Clearing logs
+    sudo rm -rf /var/log/*.log
+    sudo rm -rf /var/log/**/*.log
+
+    # Clearing thumbnails
+    rm -rf ~/.cache/thumbnails/*
+
+    display_message "Cleanup completed. Goodbye!"
+
+}
+
+
 # Main script execution starts here
 
 # Update repositories and perform upgrades
@@ -104,6 +127,9 @@ install_security_updates
 
 # Check and install essential packages
 install_essential_packages
+
+# Clear temporary files and caches
+clear_temporary_files
 
 # Check the current time and display a greeting accordingly
 now=$(date +"%H")
