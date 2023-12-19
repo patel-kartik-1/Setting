@@ -1,0 +1,8 @@
+# for ssh
+Open your terminal application
+Install the openssh-server package on Ubuntu, run: sudo apt install openssh-server
+Enable ssh server on Ubuntu, run: sudo systemctl enable ssh
+By default, firewall will block ssh access. Therefore, you must enable ufw and open ssh port
+Open ssh tcp port 22 using ufw firewall, run: sudo ufw allow ssh
+
+Once the installation done, use it by typing from the CLIENT: ssh user@server-ip-here
