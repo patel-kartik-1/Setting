@@ -1,3 +1,4 @@
+#rename file .bash_functions and move to ~/bash_utils/
 #!/bin/bash
 
 phpmode() {
