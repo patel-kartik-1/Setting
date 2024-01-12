@@ -1,3 +1,4 @@
+#rename file .bash_aliases and move to ~/bash_utils/
 # laravel
 
 alias art="php artisan"
