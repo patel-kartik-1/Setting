@@ -1,2 +1,14 @@
-# add in last source ..bash_aliases and source .bash_functions
+In 
 nano ~/.bashrc 
+nano ~/.zshrc
+
+add 
+
+if [ -f ~/bash_utils/.bash_aliases ]; then
+    . ~/bash_utils/.bash_aliases
+fi
+
+if [ -f ~/bash_utils/.bash_functions ]; then
+    . ~/bash_utils/.bash_functions
+fi
+
