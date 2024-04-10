@@ -73,6 +73,9 @@ function install_security_updates() {
 
 # Function to perform system updates and cleanup
 function perform_system_updates() {
+    printf "${BLUE}Updating snap ...${NC}\n"
+    sudo snap refresh
+     
     printf "${BLUE}Updating repositories...${NC}\n"
     sudo apt update
 
