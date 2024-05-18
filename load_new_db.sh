@@ -42,7 +42,8 @@ if [ $? -eq 0 ]; then
     echo -e "${GREEN}Database $DB_NAME loaded successfully.${NC}"
 
     echo -e "${YELLOW}Select an option:${NC}"
-    options=("${BLUE}DSM${NC}" "${BLUE}MDJ${NC}" "${BLUE}Other${NC}")
+    options=("DSM" "MDJ" "Other(Without Password)")
+
 
     PS3=$(echo -e "${YELLOW}Enter the number corresponding to your System: ${NC}")
     select choice in "${options[@]}"; do
