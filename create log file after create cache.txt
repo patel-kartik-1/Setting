@@ -1,0 +1,15 @@
+# apache log
+sudo mkdir -p /var/log/apache2
+sudo chown www-data:www-data /var/log/apache2
+sudo chmod 755 /var/log/apache2
+sudo systemctl restart apache2
+
+sudo mkdir -p /var/log/redis
+sudo chown redis:redis /var/log/redis
+sudo chmod 755 /var/log/redis
+sudo systemctl restart redis-server
+
+sudo mkdir -p /var/log/mysql
+sudo chown mysql:mysql /var/log/mysql
+sudo chmod 755 /var/log/mysql
+sudo systemctl restart mysql
