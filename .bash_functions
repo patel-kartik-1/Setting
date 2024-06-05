@@ -1,4 +1,3 @@
-#rename file .bash_functions and move to ~/bash_utils/
 #!/bin/bash
 
 phpmode() {
@@ -8,6 +7,7 @@ phpmode() {
   sudo a2dismod php7.3
   sudo a2dismod php7.4
   sudo a2dismod php8.0
+  sudo a2dismod php8.3
   sudo a2enmod php"$PHP_VER"
   sudo service apache2 restart
   sudo update-alternatives --set php /usr/bin/php"$PHP_VER"
@@ -31,10 +31,17 @@ commit() {
   eval "git commit -a -m '${MESSAGE}'"
 }
 
-clsgit() {
-  git gc
-  git trim
+gitpush() {
+  MESSAGE="$1"
+
+  if [ "$MESSAGE" = "" ]; then
+    MESSAGE="wip"
+  fi
+  git add .
+  eval "git commit -a -m '${MESSAGE}'"
+  git push 
 }
+
 
 setdsm() {
   mkdir -p ./bootstrap/cache
@@ -71,14 +78,15 @@ rebase() {
 }
 
 clslara() {
-  php artisan cache:clear
-  php artisan view:clear
-  php artisan config:clear
-  php artisan route:clear
-  php artisan debugbar:clear
-  php artisan optimize:clear
+        php artisan cache:clear
+        php artisan view:clear
+        php artisan config:clear
+        php artisan route:clear
+        php artisan debugbar:clear
+        php artisan optimize:clear
+        sudo rm -rf storage/logs/*.log
+        sudo rm -rf *.log
 
-  sudo rm -rf storage/logs/*.log
 }
 
 pullrebase() {
@@ -86,4 +94,13 @@ pullrebase() {
   git stash
   git pull --rebase
   git stash pop
+}
+
+gitpr() {
+  git pull --rebase
+}
+
+clsgit() {
+  git gc
+  git trim
 }
