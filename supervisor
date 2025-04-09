@@ -1,0 +1,14 @@
+//supervisor 
+ sudo apt install -y supervisor\nsudo systemctl start supervisor\nsudo systemctl enable supervisor\n
+  590  sudo systemctl enable supervisor\n
+  591  sudo systemctl status supervisor\n
+  592  sudo systemctl status supervisor
+
+cd /etc/supervisor/
+sudo nano supervisord.conf
+  add
+  [inet_http_server]
+  port = 127.0.0.1:9001
+
+
+
