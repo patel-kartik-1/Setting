@@ -1,3 +1,4 @@
+#put file over bash_utils/.bash_aliases
 # laravel
 
 alias art="php artisan"
